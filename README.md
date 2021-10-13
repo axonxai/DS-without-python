@@ -10,3 +10,12 @@ For the Meetup we focus on 4 languages:
 
 ## Usage
 Put training and test data in the data folder. To add a solution add a directory with the name of your language and put inside the code and instructions on how to run it.
+***
+## Running the code
+
+### Go
+Assuming you're in the `go` directory you can:
+```shell
+$ go mod tidy # install the dependencies
+$ go run *.go # run the program
+```
