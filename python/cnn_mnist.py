@@ -47,8 +47,10 @@ def reshape_and_normalise(images):
 
 def define_model():
     """
-    Creating a Sequential Model and adding the layers
-    """
+    Creating a Sequential Model and adding the layers.
+    Source: https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d
+    :return:    model:      TensorFlow Keras CNN
+    """""
     model = Sequential()
     model.add(Conv2D(28, kernel_size=(3, 3), input_shape=(28, 28, 1)))
     model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -64,7 +66,7 @@ def main(argv):
     train_images = reshape_and_normalise(train_images)
     test_images = reshape_and_normalise(test_images)
 
-    #show_first_images(train_images)
+    # show_first_images(train_images)
 
     model = define_model()
     model.compile(optimizer='adam',
