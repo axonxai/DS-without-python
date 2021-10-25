@@ -39,7 +39,8 @@ def main(argv):
     features = data[feature_names]  # Features
     labels = data['species']  # Labels
     # Split dataset into training set and test set:
-    feat_train, feat_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.3)  # 70% training and 30% test
+    feat_train, feat_test, labels_train, labels_test = train_test_split(features, labels,
+                                                                        test_size=0.3)  # 70% training and 30% test
 
     model = RandomForestClassifier(n_estimators=100)  # Define model
     model.fit(feat_train, labels_train)  # Train model
