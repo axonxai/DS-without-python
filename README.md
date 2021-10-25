@@ -24,5 +24,5 @@ $ go run *.go # run the program
 Assuming you're in the `python` directory you can:
 ```shell
 $ pip3 install -r requirements.txt  # install the dependencies (on a M1-Mac you need to install tensorflow-macos!)
-$ python3 *.py                      # run the program
+$ python3 <file_name>.py                      # run the program
 ```
