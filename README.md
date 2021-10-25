@@ -19,3 +19,10 @@ Assuming you're in the `go` directory you can:
 $ go mod tidy # install the dependencies
 $ go run *.go # run the program
 ```
+
+### Python
+Assuming you're in the `python` directory you can:
+```shell
+$ pip3 install -r requirements.txt  # install the dependencies (on a M1-Mac you need to install tensorflow-macos!)
+$ python3 *.py                      # run the program
+```
