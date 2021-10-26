@@ -3,3 +3,4 @@ matplotlib
 tensorflow
 pandas
 scikit-learn==1.*
+numpy
