@@ -68,11 +68,16 @@ def main(argv):
 
     # show_first_images(train_images)
 
+    # High batch_size for GPU, None (default:32) for CPU:
+    batch_size = None
+    if len(tf.config.list_physical_devices('GPU')) > 0:
+        batch_size = 512
+
     model = define_model()
     model.compile(optimizer='adam',
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
-    model.fit(x=train_images, y=train_labels, epochs=10)
+    model.fit(x=train_images, y=train_labels, epochs=10, batch_size=batch_size)
     model.evaluate(test_images, test_labels)
 
 
