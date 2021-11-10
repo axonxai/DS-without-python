@@ -16,8 +16,8 @@ Put training and test data in the data folder. To add a solution add a directory
 ### Go
 Assuming you're in the `go` directory you can:
 ```shell
-$ go mod tidy # install the dependencies
-$ go run *.go # run the program
+$ go mod tidy                       # install the dependencies
+$ go run *.go                       # run the program
 ```
 
 ### Python
@@ -25,4 +25,11 @@ Assuming you're in the `python` directory you can:
 ```shell
 $ pip3 install -r requirements.txt  # install the dependencies (on a M1-Mac you need to install tensorflow-macos!)
 $ python3 <file_name>.py            # run the program
+```
+
+### Julia
+Assuming you're in the `julia` directory you can:
+```shell
+$ julia requirements.jl             # install the dependencies
+$ julia <file_name>.jl              # run the program
 ```
