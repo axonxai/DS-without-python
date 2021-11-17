@@ -1,0 +1,211 @@
+digraph fullGraph {
+	nodesep=1;
+	rankdir=TB;
+	ranksep="1.5 equally";
+	Node_0xc00010e540:Node_0xc00010e540:anchor->Node_0xc00010e0e0:Node_0xc00010e0e0:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc00010e620:Node_0xc00010e620:anchor->Node_0xc00010e2a0:Node_0xc00010e2a0:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc00010e700:Node_0xc00010e700:anchor->Node_0xc00010e540:Node_0xc00010e540:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc00010e7e0:Node_0xc00010e7e0:anchor->Node_0xc00010e700:Node_0xc00010e700:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc00010e7e0:Node_0xc00010e7e0:anchor->Node_0xc00010e620:Node_0xc00010e620:anchor[ labelfloat=false, taillabel=" 1 " ];
+	Node_0xc00010e9a0:Node_0xc00010e9a0:anchor->Node_0xc00010e7e0:Node_0xc00010e7e0:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc00010ea80:Node_0xc00010ea80:anchor->Node_0xc00010e9a0:Node_0xc00010e9a0:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc00010eb60:Node_0xc00010eb60:anchor->Node_0xc00010ea80:Node_0xc00010ea80:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc00010ec40:Node_0xc00010ec40:anchor->Node_0xc00010eb60:Node_0xc00010eb60:anchor[ labelfloat=false, taillabel=" 0 " ];
+	outsideRoot->insideInputs[ constraint=false, style=invis, weight=999 ];
+	outsideExprG->insideExprG[ constraint=false, style=invis, weight=999 ];
+	outsideRoot->outsideExprG[ constraint=false, style=invis, weight=999 ];
+	insideInputs->insideExprG[ constraint=false, style=invis, weight=999 ];
+	subgraph cluster_expressionGraph {
+	label=expressionGraph;
+	Node_0xc00010e540 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>5</TD><TD>im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%0) :: Tensor-4 float64</TD></TR>
+<TR><TD>Op</TD><TD>im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt; :: Tensor-4 a → Tensor-4 a</TD></TR>
+<TR><TD>Shape</TD><TD>(100, 26, 26, 9)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010e620 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>6</TD><TD>Reshape(28, 9)(%2) :: Matrix float64</TD></TR>
+<TR><TD>Op</TD><TD>Reshape(28, 9) :: Tensor-4 a → Matrix a</TD></TR>
+<TR><TD>Shape</TD><TD>(28, 9)</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010e700 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>7</TD><TD>Reshape(67600, 9)(%5) :: Matrix float64</TD></TR>
+<TR><TD>Op</TD><TD>Reshape(67600, 9) :: Tensor-4 a → Matrix a</TD></TR>
+<TR><TD>Shape</TD><TD>(67600, 9)</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010e7e0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>8</TD><TD>A × Bᵀ(%7, %6) :: Matrix float64</TD></TR>
+<TR><TD>Op</TD><TD>A × Bᵀ :: Matrix a → Matrix a → Matrix a</TD></TR>
+<TR><TD>Shape</TD><TD>(67600, 28)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010e9a0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>9</TD><TD>Reshape(100, 26, 26, 28)(%8) :: Tensor-4 float64</TD></TR>
+<TR><TD>Op</TD><TD>Reshape(100, 26, 26, 28) :: Matrix a → Tensor-4 a</TD></TR>
+<TR><TD>Shape</TD><TD>(100, 26, 26, 28)</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010ea80 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>a</TD><TD>Aᵀ{0, 3, 1, 2}(%9) :: Tensor-4 float64</TD></TR>
+<TR><TD>Op</TD><TD>Aᵀ{0, 3, 1, 2} :: Tensor-4 a → Tensor-4 a</TD></TR>
+<TR><TD>Shape</TD><TD>(100, 28, 26, 26)</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010eb60 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>b</TD><TD>MaxPool{100, 28, 26, 26}(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%a) :: Tensor-4 float64</TD></TR>
+<TR><TD>Op</TD><TD>MaxPool{100, 28, 26, 26}(kernel: (2, 2), pad: (0, 0), stride: (2, 2)) :: Tensor-4 a → Tensor-4 a</TD></TR>
+<TR><TD>Shape</TD><TD>(100, 28, 13, 13)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010ec40 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#FF0000;" >
+
+<TR><TD>c</TD><TD>Reshape(100, 4732)(%b) :: Matrix float64</TD></TR>
+<TR><TD>Op</TD><TD>Reshape(100, 4732) :: Tensor-4 a → Matrix a</TD></TR>
+<TR><TD>Shape</TD><TD>(100, 4732)</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	insideExprG [ style=invis ];
+
+}
+;
+	subgraph inputConsts {
+	rank=max;
+	subgraph cluster_inputs {
+	label=inputs;
+	Node_0xc00010e0e0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#00FF00;" BGCOLOR="lightyellow">
+
+<TR><TD>0</TD><TD>x :: Tensor-4 float64</TD></TR>
+
+<TR><TD>Shape</TD><TD>(100, 1, 28, 28)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010e1c0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#00FF00;" BGCOLOR="lightyellow">
+
+<TR><TD>1</TD><TD>y :: Matrix float64</TD></TR>
+
+<TR><TD>Shape</TD><TD>(100, 10)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010e2a0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#00FF00;" BGCOLOR="lightyellow">
+
+<TR><TD>2</TD><TD>w0 :: Tensor-4 float64</TD></TR>
+
+<TR><TD>Shape</TD><TD>(28, 1, 3, 3)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>Tensor-4 (28, 1, 3, 3) [9 9 3 1]<BR />⎡   0.0455     -0.127    0.00942⎤<BR />⎢   0.0559     0.0237     -0.122⎥<BR />⎣   0.0536     -0.121     0.0316⎦<BR /><BR /><BR />⎡   0.0955     0.0122     0.0368⎤<BR />⎢   0.0113    0.00078      0.123⎥<BR />⎣   -0.216     0.0451    -0.0366⎦<BR /><BR /><BR />⎡  -0.0381     0.0899     0.0405⎤<BR />⎢   -0.053     0.0259     0.0915⎥<BR />⎣   -0.126     0.0108     -0.012⎦<BR /><BR /><BR />⎡   0.0874  -0.000541    -0.0466⎤<BR />⎢  -0.0105     0.0284    0.00815⎥<BR />⎣  -0.0477    -0.0701     -0.146⎦<BR /><BR /><BR />⎡  -0.0913     0.0591      0.121⎤<BR />⎢  -0.0761    -0.0235     0.0654⎥<BR />⎣  -0.0559    0.00953     0.0605⎦<BR /><BR /><BR />⎡ -0.00885    -0.0661     0.0787⎤<BR />⎢    0.145     -0.173     0.0434⎥<BR />⎣     0.04      0.098    0.00365⎦<BR /><BR /><BR />⎡    0.157     0.0542     -0.102⎤<BR />⎢  0.00735     0.0215     0.0142⎥<BR />⎣  -0.0172   -0.00177    -0.0261⎦<BR /><BR /><BR />⎡    0.167    -0.0504     0.0302⎤<BR />⎢  -0.0381     0.0561     0.0706⎥<BR />⎣  -0.0827    -0.0501     0.0209⎦<BR /><BR /><BR />⎡  -0.0943    -0.0522    -0.0426⎤<BR />⎢     0.11     0.0868     0.0382⎥<BR />⎣   0.0548     -0.077      0.186⎦<BR /><BR /><BR />⎡  -0.0401     0.0634    -0.0249⎤<BR />⎢   -0.146      0.115     -0.114⎥<BR />⎣   -0.159   -0.00436     -0.153⎦<BR /><BR /><BR />⎡  -0.0374   0.000765     0.0371⎤<BR />⎢  -0.0128     -0.164     -0.138⎥<BR />⎣   0.0674     0.0218     0.0876⎦<BR /><BR /><BR />⎡   -0.064    -0.0174     0.0176⎤<BR />⎢  -0.0386     0.0908      -0.17⎥<BR />⎣    0.164    -0.0207     -0.185⎦<BR /><BR /><BR />⎡   -0.037     0.0448       0.16⎤<BR />⎢   -0.127      0.209     0.0755⎥<BR />⎣  -0.0074    -0.0709    -0.0537⎦<BR /><BR /><BR />⎡   -0.196    -0.0867    -0.0179⎤<BR />⎢    0.182    -0.0926    -0.0303⎥<BR />⎣    0.154     0.0317     0.0844⎦<BR /><BR /><BR />⎡   -0.137     -0.145     0.0541⎤<BR />⎢   0.0758     -0.017    -0.0169⎥<BR />⎣   -0.104    -0.0734     -0.221⎦<BR /><BR /><BR />⎡  -0.0715    -0.0529    -0.0495⎤<BR />⎢    0.172    -0.0906     0.0992⎥<BR />⎣    0.117     -0.112     0.0352⎦<BR /><BR /><BR />⎡   0.0342   -0.00246     -0.171⎤<BR />⎢   0.0387     0.0967   -0.00925⎥<BR />⎣   0.0228      0.052    0.00896⎦<BR /><BR /><BR />⎡ -0.00105      0.027    -0.0187⎤<BR />⎢  -0.0674     0.0915      0.154⎥<BR />⎣ -0.00612    -0.0174     -0.141⎦<BR /><BR /><BR />⎡   0.0869    -0.0288     -0.148⎤<BR />⎢  -0.0784     0.0966    -0.0505⎥<BR />⎣    -0.18      0.131     -0.162⎦<BR /><BR /><BR />⎡   -0.131   -0.00621     0.0305⎤<BR />⎢  -0.0774     -0.152      0.067⎥<BR />⎣  -0.0327    -0.0419    -0.0235⎦<BR /><BR /><BR />⎡ -0.00151      0.058     0.0583⎤<BR />⎢  0.00942     -0.166    -0.0131⎥<BR />⎣    0.076     0.0504     0.0499⎦<BR /><BR /><BR />⎡  -0.0941     -0.139     0.0448⎤<BR />⎢   0.0027      0.031      0.114⎥<BR />⎣   0.0361      0.167     0.0941⎦<BR /><BR /><BR />⎡  0.00768    -0.0575     0.0858⎤<BR />⎢   -0.121    -0.0179    -0.0168⎥<BR />⎣  -0.0445    -0.0613     0.0179⎦<BR /><BR /><BR />⎡ -0.00412      0.143     -0.118⎤<BR />⎢  -0.0577    -0.0535     0.0364⎥<BR />⎣  -0.0199     0.0215     -0.151⎦<BR /><BR /><BR />⎡ -0.00996    -0.0385     -0.131⎤<BR />⎢   0.0568    -0.0428     -0.181⎥<BR />⎣    0.132     0.0578    -0.0397⎦<BR /><BR /><BR />⎡  -0.0116     -0.189    -0.0791⎤<BR />⎢    0.034     0.0694     0.0306⎥<BR />⎣   0.0401     0.0534    -0.0417⎦<BR /><BR /><BR />⎡   0.0506    -0.0101     0.0709⎤<BR />⎢  -0.0251   -0.00315     0.0261⎥<BR />⎣  -0.0154    -0.0319   0.000373⎦<BR /><BR /><BR />⎡  -0.0328     0.0512     0.0979⎤<BR />⎢   0.0265     -0.116    -0.0167⎥<BR />⎣  0.00373     -0.119    -0.0177⎦<BR /><BR /><BR /></TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010e380 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#00FF00;" BGCOLOR="lightyellow">
+
+<TR><TD>3</TD><TD>w1 :: Matrix float64</TD></TR>
+
+<TR><TD>Shape</TD><TD>(4732, 128)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>Matrix (4732, 128) [128 1]<BR />⎡   0.0347     0.0126  ⋯   -0.0184   -0.00235⎤<BR />⎢ -0.00411   -0.00687  ⋯   -0.0288    -0.0174⎥<BR />  ⋮  <BR />⎢   0.0126    0.00174  ⋯   -0.0176   -0.00279⎥<BR />⎣ -0.00805     0.0364  ⋯    0.0159     0.0105⎦<BR /></TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc00010e460 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#00FF00;" BGCOLOR="lightyellow">
+
+<TR><TD>4</TD><TD>w2 :: Matrix float64</TD></TR>
+
+<TR><TD>Shape</TD><TD>(128, 10)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>Matrix (128, 10) [10 1]<BR />⎡  0.00211   -0.00121  ⋯    0.0631     0.0345⎤<BR />⎢   0.0928   -0.00186  ⋯     0.266     0.0763⎥<BR />  ⋮  <BR />⎢  -0.0156    -0.0174  ⋯    -0.018     0.0839⎥<BR />⎣  -0.0564     0.0874  ⋯   -0.0784     0.0589⎦<BR /></TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	insideInputs [ style=invis ];
+
+}
+;
+
+}
+;
+	subgraph outsides {
+	outsideExprG [ style=invis ];
+	outsideRoot [ style=invis ];
+
+}
+;
+
+}
