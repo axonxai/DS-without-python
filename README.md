@@ -33,3 +33,27 @@ Assuming you're in the `julia` directory you can:
 $ julia requirements.jl             # install the dependencies
 $ julia <file_name>.jl              # run the program
 ```
+
+###  Rust
+Install Rust, check https://www.rust-lang.org/tools/install
+
+In the RUST ecosystem Cargo is your friend, it a package manager which handles all your dependencies and provides 
+the BUILD tool for your RUST projects. But is handles basically all your development needs from building to testing all
+your CI stuff! 
+
+Starter, Hello World in RUST without typing code:
+
+    $ cargo new HelloWorld
+    $ cd HelloWorld
+    $ cargo run
+
+#### Kmeans
+
+#### Random Forest
+Based on RustLearn Crate
+
+    $ cd $rustl/randomforest/rustlearn
+    $ cargo run --release
+
+#### MNIST DNN/CNN
+
