@@ -18,7 +18,7 @@ fn read_from_file(path: &str) -> Result<Vec<f64>, Box<dyn Error>>{
 
 fn main()   {
     // Load data
-    let points = read_from_file("../../data/clustering/clustering.csv");
+    let points = read_from_file("../../../data/clustering/clustering.csv");
     let inputs = Matrix::new(299, 2, points.unwrap());
     let test_inputs = Matrix::new(1, 2, vec![1.0, 3.5]);
 
