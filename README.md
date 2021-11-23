@@ -48,6 +48,10 @@ Starter, Hello World in RUST without typing code:
     $ cargo run
 
 #### Kmeans
+Based on Rusty-machine Crate
+
+    $ cd $rust/kmeans/rusty-machine
+    $ cargo run --release
 
 #### Random Forest
 Based on RustLearn Crate
