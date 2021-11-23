@@ -3,4 +3,7 @@
 **/.venv
 target
 .idea
+.DS_Store
+**/Cargo.lock
+
 
