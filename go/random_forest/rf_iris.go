@@ -23,9 +23,7 @@ func main() {
 	// decision trees.
 	rand.Seed(42)
 
-	// Assemble a random forest with 10 trees and 2 features per tree,
-	// which is a sane default (number of features per tree is normally set
-	// to sqrt(number of features)).
+	// Assemble a random forest with 100 trees and 4 features per tree
 	rf := ensemble.NewRandomForest(100, 4)
 
 	// Use cross-fold validation to successively train and evaluate the model

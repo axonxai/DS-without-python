@@ -14,11 +14,19 @@ Put training and test data in the data folder. To add a solution add a directory
 ## Running the code
 
 ### Go
-Assuming you're in the `go` directory you can:
+Assuming you're in the `go` directory you can `cd` to the relevant directory for the solution you want and run it.
 ```shell
 $ go mod tidy                       # install the dependencies
 $ go run *.go                       # run the program
 ```
+#### Kmeans
+This implementation uses the `muesli` package, and was partly based on the cluster analysis shown by spatial-go [1].
+
+#### Random forest
+This implementation is based on the book "Machine Learning with Go" [2].
+
+#### CNN
+This implementation is based on the tutorial for a simple convolution neural net [3].
 
 ### Python
 Assuming you're in the `python` directory you can:
@@ -61,3 +69,7 @@ Based on RustLearn Crate
 
 #### MNIST DNN/CNN
 
+## References
+1. Spatial-go.com. 2022. [online] Available at: <http://spatial-go.com/docs/cluster_analysis.html> [Last accessed 28 January 2022].
+1. Whitenack, D. and Selvaraj, J., 2019. Machine Learning With Go. 2nd ed. Packt Publishing.
+1. Gorgonia. 2022. Simple Convolution Neural Net (MNIST). [online] Available at: <https://gorgonia.org/tutorials/mnist/> [Last accessed 28 January 2022].
