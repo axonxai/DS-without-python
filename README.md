@@ -1,6 +1,6 @@
-# ML languages comparison
+# Data science without Python
 
-In this repository you can find examples of ML solutions implemented in multiple languages.
+In this repository you can find examples of ML solutions implemented in multiple languages. These examples are named in our [blog](https://tech.ilionx.com/data-science-without-python-is-it-possible/).
 ## Description
 For the Meetup we focus on 4 languages:
 - Python
